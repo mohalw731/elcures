@@ -24,7 +24,9 @@ export default function Navbar({ menu_links }) {
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-[#141414]' : 'bg-transparent'}`}>
       <div className="max-w-[1440px] mx-auto w-full min-h-full px-5 flex items-center justify-between py-4">
-        <Image src={logo} alt="logo" width={200} height={100} />
+       <Link href="/">
+       <Image src={logo} alt="logo" width={200} height={100} />
+       </Link>
 
         {/* Desktop Links */}
         <ul className="gap-5 text-white md:flex hidden">
