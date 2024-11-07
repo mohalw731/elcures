@@ -1,101 +1,90 @@
-import Image from "next/image";
+import Hero from '@/components/Hero'
+import React from 'react'
+import hero from '../assets/hero.png'
+import Text_block from '@/components/Text_block'
+import Services from '@/components/Services'
+import Roller from '@/components/Roller'
+import Case from '@/components/Case'
 
-export default function Home() {
+const Home = () => {
+  const services = [
+    {
+      id: 1,
+      title: "Nyproduktion",
+      text: "El Cures har erfarenhet med flertals nyproduktionsarbeten och är där från planering till färdigställande. Vi säkerställer att alla elektriska system uppfyller dagens höga krav på säkerhet och effektivitet."
+    },
+    {
+      id: 2,
+      title: "Kraftinstallationer",
+      text: "Inom kraftinstallationer erbjuder vi robusta lösningar för att hantera högre strömmar och spänningar. Vi arbetar med kraftdistribution i industriella och kommersiella fastigheter, och ser till att alla installationer är säkra och energieffektiva."
+    },
+    {
+      id: 3,
+      title: "Fiber",
+      text: "Vi erbjuder installation av fibernät och kommunikationslösningar för bostäder och företag. Våra installationer garanterar snabb och pålitlig uppkoppling med hög kapacitet, oavsett om det gäller enskilda hushåll eller större nätverk."
+    },
+    {
+      id: 4,
+      title: "Solcellsanläggningar",
+      text: "El Cures erbjuder installation av skräddarsydda solcellsystem som är utformade för att maximera energieffektiviteten och säkerställa en pålitlig energiförsörjning året runt."
+    },
+    {
+      id: 5,
+      title: "Service",
+      text: "Vårt team har bred kompetens och ger dig snabb och kompetent service inom säkerhet- och elinstallationer. Vi säkerställer att de fungerar och är optimerade för morgondagen."
+    },
+    {
+      id: 6,
+      title: "Projektering",
+      text: "Med vår projekteringstjänst tar vi fram detaljerade ritningar och planlösningar som matchar kundens specifika behov. Vi samarbetar tätt med både arkitekter och byggentreprenörer för att säkerställa att varje elinstallation integreras smidigt i byggprocessen."
+    },
+    {
+      id: 7,
+      title: "Säkerhetssystem",
+      text: "Vi installerar avancerade säkerhetssystem som inkluderar brandlarm, inbrottslarm, övervakningskameror och passagessystem. Vi ger säker och smidig kontroll över in- och utpassering som kan enkelt anpassas efter dina specifika behov."
+    },
+    {
+      id: 8,
+      title: "Energiinstallationer",
+      text: "Vi erbjuder energiinstallationer som hjälper dig att effektivisera energiförbrukningen i din fastighet. Från installation av energisparsystem till laddstationer för elbilar, fokuserar vi på hållbara lösningar som både sparar pengar och gynnar miljön."
+    }
+  ];
+
+
+  const cases = [
+    {
+      title: "Kryddpepparn",
+      description: "Kv. Kryddpepparn 1 & 2 är två kvarter med 190 lägenheter uppförda i början av 1960-talet, belägna i Hökarängen i södra Stockholm. I höst 2024 startade vi ett stort rotprojekt tillsammans med Byggmästargruppen Stockholm BMG AB. I arbetet så skötte vi renovering av elnätverket samt utbyte ut befintliga elserviser.",
+      image: "/placeholder.svg?height=400&width=600"
+    },
+    {
+      title: "Berghusen",
+      description: "EL Cures har fått förtroendet av Hawila Projekt AB att utföra projektet Kv. Berghusen. Projektet innebär elinstallationer i 211 lägenheter samt allmänna utrymmen som exempelvis garage och hallar. Vi kommer att leverera el och kraftinstallationer samt fiber och passagesystem. ",
+      image: "/placeholder.svg?height=400&width=600"
+    },
+    {
+      title: "Modellören",
+      description: "Vi har fått glädjen att tillsammans med 2xA Entreprenad utföra elinstallationer i 76 lägenheter i Gustavsberg. Det innehåller el och tele installationer, passersystem, byggström och solceller.",
+      image: "/placeholder.svg?height=400&width=600"
+    }
+  ]
+  
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div>
+      <Hero image={hero} text={"Din certifierade elektriker i Stockholm som kan hjälpa till med allt från service till installationer."} title={"Specialister inom elinstallationer"} />
+      <Text_block title={'Din trygga elinstallatör'} text={
+        'Vi på El Cures är din kompletta partner för elinstallationer i Stockholm. Med lång och bred erfarenhet så hjälper vi med allt från kortare uppdrag som behöver respons snabbt till komplexa projekt som kräver stor noggrannhet och precision. Oavsett om det gäller att stambyta en fastighet eller installera ett komplett säkerhetssystem, kan du räkna med att vi levererar med högsta kvalitet.Vi specialiserar oss på en bred variation av elinstallationer och jobbar med allt från stora entreprenader till solceller och elbilsladdare. Vi tar även hand om säkerhetssystem som brandlarm, fiber och inbrottslarm. Hos oss får du inte bara pålitlig service utan även installationslösningar som håller hög standard, är snygga och framför allt säkra.'
+      } 
+      button_text={'Läs mer om oss'}
+      button_link={'/om-oss'}
+      show_button={true}
+      />
+      <Services services={services} title={'Våra tjänster'} />
+      <Roller services={services} />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      <Case cases={cases} show_button={true} button_text={'Se fler referensuppdrag'} button_link={'/case'}/>
     </div>
-  );
+  )
 }
+
+export default Home
