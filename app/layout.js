@@ -9,9 +9,9 @@ export const metadata = {
 
 const menu_links = [
   { name: "OM OSS", href: "/om-oss" },
-  { name: "VÅRA TJÄNSTER", href: "/" },
-  { name: "CASE", href: "/" },
-  { name: "KONTAKT", href: "/" }, // Fixed typo in "KONTAKT"
+  { name: "VÅRA TJÄNSTER", href: "/tjanster" },
+  { name: "CASE", href: "/case" },
+  { name: "KONTAKT", href: "/kontakt" }, // Fixed typo in "KONTAKT"
 ];
 
 const footerData = {

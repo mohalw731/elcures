@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 
 
-export default function Case({ cases, button_text, button_link, show_button }) {
+export default function Case({ cases, button_text, button_link, show_button, title }) {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const nextCase = () => {
@@ -24,7 +24,7 @@ export default function Case({ cases, button_text, button_link, show_button }) {
 
   return (
     <div className="w-full max-w-7xl px-5 mx-auto py-20">
-      <h2 className="md:text-5xl text-white text-3xl mb-5">Referensuppdrag</h2>
+      <h2 className="md:text-5xl text-white text-3xl mb-5">{title}</h2>
 
       <div className="relative bg-[#272727] rounded-lg overflow-hidden">
         <div className="grid md:grid-cols-2 gap-4">
